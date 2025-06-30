@@ -1,0 +1,17 @@
+---
+title: "Biden Polling"
+author: Kellen Narke
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+poll_data <- tibble(biden = as.factor(c(rep("Yes", 655), 
+                                        rep("No", 904)))) |> 
+                slice_sample(prop = 1)
+```
+
+Voters select whether or not to support Joe Biden in the 2024 election. We use polling data from May 2024 to predict his level of support
